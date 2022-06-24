@@ -31,5 +31,12 @@ jobs:
     - name: get version
       run: |
         echo "start-----"
-        echo "${{android.defaultConfig.versionName}}"
+        #echo "${{android.defaultConfig.versionName}}"
+    - name: read
+      id: gradle
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./app/build.gradle
+    - name: Echo build.gradle
+      run: echo "${{ steps.package.outputs.content }}"
         
