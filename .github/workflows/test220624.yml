@@ -32,7 +32,7 @@ jobs:
       id: gradle
       uses: juliangruber/read-file-action@v1
       with:
-        path: ./app/build.gradle
+        path: ./build.gradle
     - name: Echo build.gradle
       run: |
         echo "${{ steps.package.outputs.content }}"
