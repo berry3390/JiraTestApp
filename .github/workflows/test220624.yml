@@ -30,6 +30,9 @@ jobs:
           ./app/build.gradle
         key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', '**/*.gradle*', '**/gradle-wrapper.properties') }}
     - name: read cache
+      env:
+        GRADLE_PROPERTIES: ${{ secrets.GRADLE_PROPERTIES }}
+      shell: bash
       run: |
         mkdir -p ~/.gradle/
         echo "GRADLE_USER_HOME=${HOME}/.gradle" >> $GITHUB_ENV
