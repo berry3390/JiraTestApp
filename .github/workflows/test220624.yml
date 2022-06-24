@@ -27,13 +27,13 @@ jobs:
         path: |
           ~/.gradle/caches
           ~/.gradle/wrapper
-          ~/.app/build.gradle
+          ~/app/build.gradle
         key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', '**/*.gradle*', '**/gradle-wrapper.properties') }}
     - name: read juliangruber/read-file-action@v1
       id: gradle
       uses: juliangruber/read-file-action@v1
       with:
-        path: ~/.app/build.gradle
+        path: ~/app/build.gradle
     - name: Echo build.gradle
       run: |
         echo "${{ steps.package.outputs.content }}"
@@ -41,7 +41,7 @@ jobs:
       id: gradle2
       uses: andstor/file-reader-action@v1
       with:
-        path: ~/.app/build.gradle
+        path: ~/app/build.gradle
     - name: File contents
       run: echo "${ steps.read_file.outputs.contents }"
 
