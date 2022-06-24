@@ -17,16 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Extract version name
-      run: |
-        echo "start------"
-        echo ${{ steps.release.outputs.new-version }}
-    - name: get appbundle
-      with:
-        name: appbundle
-        path: ./app/build.gradle
-        run: |
-          echo "bundle version1 : '${{versionName}}'"
-          echo "bundle version2 : '${{android.defaultConfig.versionName}}'"
+      run: echo "##[set-output name=version;]$(echo '${{ github.event.head_commit.message }}' | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')"
+      id: extract_version_name   
       
       
         
