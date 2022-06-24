@@ -23,9 +23,10 @@ jobs:
     - name: get appbundle
       with:
         name: appbundle
-        path: app/build.gradle
+        path: ./app/build.gradle
         run: |
-          echo "bundle version: '${{android.defaultConfig.versionName}}'"
+          echo "bundle version1 : '${{versionName}}'"
+          echo "bundle version2 : '${{android.defaultConfig.versionName}}'"
       
       
         
