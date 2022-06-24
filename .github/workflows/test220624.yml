@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - develop
+      - 'develop/**'
   pull_request:
     branches:
       - master
@@ -19,6 +20,13 @@ jobs:
       run: |
         echo "start------"
         echo ${{ steps.release.outputs.new-version }}
+    - name: get appbundle
+      with:
+        name: appbundle
+        path: app/build.gradle
+        run: |
+          echo "bundle version: '${{android.defaultConfig.versionName}}'"
+      
       
         
         
