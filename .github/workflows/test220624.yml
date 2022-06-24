@@ -31,7 +31,9 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', '**/*.gradle*', '**/gradle-wrapper.properties') }}
     - name: read cache
       run: |
-        echo "${{steps.cache.outputs.content}}"
+        mkdir -p ~/.gradle/
+        echo "GRADLE_USER_HOME=${HOME}/.gradle" >> $GITHUB_ENV
+        echo "${GRADLE_PROPERTIES}" > ~/.gradle/gradle.properties
     - name: read juliangruber/read-file-action@v1
       id: gradle
       uses: juliangruber/read-file-action@v1
