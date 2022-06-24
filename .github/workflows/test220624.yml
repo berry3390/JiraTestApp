@@ -31,7 +31,6 @@ jobs:
     - name: get version
       run: |
         echo "start-----"
-        #echo "${{android.defaultConfig.versionName}}"
     - name: read
       id: gradle
       uses: juliangruber/read-file-action@v1
