@@ -18,7 +18,6 @@ jobs:
     - name: Extract version name
       run: |
         echo ${{ steps.release.outputs.new-version }}
-        echo ${{ app/build.gradle }}
       
         
         
