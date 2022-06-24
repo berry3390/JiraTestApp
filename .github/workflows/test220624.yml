@@ -37,5 +37,7 @@ jobs:
       with:
         path: ./app/build.gradle
     - name: Echo build.gradle
-      run: echo "${{ steps.package.outputs.content }}"
+      run: |
+        echo "${{ steps.package.outputs.content }}"
+        echo "${{ steps.package.outputs }}"
         
