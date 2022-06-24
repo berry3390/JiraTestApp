@@ -21,3 +21,8 @@ jobs:
     - name: Print New Version
       run: |
         echo ${{ steps.release.outputs.new-version }}
+    - name: android version
+      run: |
+        echo "version: '${{project.version}}'"
+        
+        
