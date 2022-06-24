@@ -23,6 +23,6 @@ jobs:
         echo ${{ steps.release.outputs.new-version }}
     - name: android version
       run: |
-        echo "version: '${{project.version}}'"
+        echo "version: '${{project.version}}', 2: '${{github.run_number}}'"
         
         
