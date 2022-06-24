@@ -31,6 +31,5 @@ jobs:
     - name: get version
       run: |
         echo "start-----"
-        echo "${{os.versionName}}"
         echo "${{android.defaultConfig.versionName}}"
         
