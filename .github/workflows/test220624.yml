@@ -29,6 +29,9 @@ jobs:
           ~/.gradle/wrapper
           ./app/build.gradle
         key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', '**/*.gradle*', '**/gradle-wrapper.properties') }}
+    - name: read cache
+      run: |
+        echo "${{steps.cache.outputs.content}}"
     - name: read juliangruber/read-file-action@v1
       id: gradle
       uses: juliangruber/read-file-action@v1
