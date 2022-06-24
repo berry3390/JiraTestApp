@@ -36,8 +36,7 @@ jobs:
     - name: Echo build.gradle
       run: |
         echo "${{ steps.package.outputs.content }}"
-        echo "${{ steps.package.outputs }}"
-        echo "${{ steps.package }}"
+        echo "${{ steps.read_file.outputs.contents }}"
 
     
         
