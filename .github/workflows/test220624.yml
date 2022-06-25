@@ -22,10 +22,10 @@ jobs:
     - name: cat 
       run: cat app/build.gradle
     - name: cat to file
-      run: cat app/build.gradle >> test.json
-    - name: testContent
-      run: | 
+      run: |
+        cat app/build.gradle >> test.json
         cat test.json 
-    - name: hashFiles
+        cat test.android
+    - name: view app build gradle 
       run: | 
-        cat hashFiles(app/build.gradle)
+        cat app/build.gradle.android
