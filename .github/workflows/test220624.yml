@@ -29,6 +29,8 @@ jobs:
         echo $aos_version = 'aa'
         echo $aos_version
         echo "$aos_version"
+      env:  
+        aos_version: 수정값
         
 
 
