@@ -28,4 +28,4 @@ jobs:
         cat test.json 
     - name: toJson
       run: | 
-        cat toJson(test.json)
+        cat toJson(cat app/build.gradle)
