@@ -22,7 +22,5 @@ jobs:
     - name: cat 
       run: | 
         cat app/build.gradle >> test.json
-        echo "${{ test.json }}"
-    - name: toJson
-      run: |
-        echo "${{ fromJson(test.json) }}"
+        cat grep 'versionName' test.json
+        a = grep 'versionName' test.json
