@@ -29,9 +29,3 @@ jobs:
     - name: toJson
       run: | 
         cat toJson(test.json)
-    - name: contain 
-      run: | 
-        echo "${{ contains("versionName", test.json) }}"
-        echo "${{ test.json, "versionName" }}"
-
-        
