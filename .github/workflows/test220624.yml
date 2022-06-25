@@ -21,9 +21,8 @@ jobs:
       run: ls -al
     - name: cat 
       run: | 
-        cat app/build.gradle >> a
-        echo "${{ a }}"
+        cat app/build.gradle >> test.json
+        echo "${{ test.json }}"
     - name: toJson
       run: |
-        echo "${{ toJson(app/build.gradle) }}"
-        echo "${{ toJson(a) }}"
+        echo "${{ fromJson(test.json) }}"
