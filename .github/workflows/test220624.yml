@@ -26,8 +26,12 @@ jobs:
     - name: testContent
       run: | 
         cat test.json 
-    - name: view android version from test.json
+    - name: toJson
       run: | 
-        echo "${{fromjson(test.json)}}"
+        cat toJson(test.json)
+    - name: contain 
+      run: | 
+        echo "${{ contains("versionName", test.json) }}"
+        echo "${{ test.json, "versionName" }}"
 
         
