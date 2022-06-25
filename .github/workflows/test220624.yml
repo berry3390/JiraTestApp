@@ -25,7 +25,7 @@ jobs:
     - name: get build version 1
       run: | 
         echo app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > aos
-        echo "AOS_VERSION=aos" >> .env
+        echo "AOS_VERSION=${{aos}}" >> .env
         echo $aos_version
         echo "$aos_version"
         cat .env
