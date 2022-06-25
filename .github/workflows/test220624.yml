@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:  
       greeting: hello
+      aos_version: dd
     steps:
     - name: Check out
       uses: actions/checkout@v3
@@ -31,6 +32,9 @@ jobs:
         cat aos
         echo "$aos_version ^^"
         echo "$greeting ^^"
-        echo "aos_version: ${{ env:aos_version }}"
         echo "aos_version2: $aos_version"
+        echo $aos_version
+        echo "aos_version: ${{ env:aos_version }}"
+        echo "${env:aos_version}"
+
 
