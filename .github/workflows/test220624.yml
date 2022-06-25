@@ -24,6 +24,10 @@ jobs:
     - name: cat to file
       run: cat app/build.gradle >> test.json
     - name: testContent
-      run: cat test.json
+      run: | 
+        cat test.json 
+    - name: view android version from test.json
+      run: | 
+        echo "${{fromjson(test.json)}}"
 
         
