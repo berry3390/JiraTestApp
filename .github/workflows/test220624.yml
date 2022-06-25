@@ -21,5 +21,7 @@ jobs:
       run: ls -al
     - name: cat 
       run: | 
-        cat app/build.gradle >> test.json
-        cat android % cat app/build.gradle | grep 'versionName'
+        cat app/build.gradle > test.json
+        cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' 
+        cat test.json | grep 'versionName'|tr -d 'versionName','/"' > c.json
+        cat c.json
