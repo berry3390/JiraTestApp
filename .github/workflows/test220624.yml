@@ -26,8 +26,9 @@ jobs:
       run: | 
         cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > aos.json
         cat aos.json
-        cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > $aos_version
+        echo "USER_NAME=$(aos_version)" >> $GITHUB_ENV
         echo ${{ aos_version }}
+        echo ${{ USER_NAME }}
       env: 
         aos_version: aos.json
         
