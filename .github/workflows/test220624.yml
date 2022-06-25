@@ -31,7 +31,3 @@ jobs:
     - name: get build version 3
       run: | 
         cat c.json
-    - name: get build version 4
-      run: | 
-        cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' > b.txt
-        echo "${{ b.txt }}"
