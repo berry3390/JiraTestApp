@@ -22,5 +22,4 @@ jobs:
     - name: cat 
       run: | 
         cat app/build.gradle >> test.json
-        cat grep 'versionName' test.json
-        a = grep 'versionName' test.json
+        cat android % cat app/build.gradle | grep 'versionName'
