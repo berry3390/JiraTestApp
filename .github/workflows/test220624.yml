@@ -17,6 +17,7 @@ jobs:
     steps:
     - name: Check out
       uses: actions/checkout@v3
+    - name: la -al
       run: ls -al
 
         
