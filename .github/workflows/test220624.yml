@@ -17,41 +17,6 @@ jobs:
     steps:
     - name: Check out
       uses: actions/checkout@v3
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
-    - name: Recover Gradle cache
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.gradle/caches
-          ~/.gradle/wrapper
-          ./app/build.gradle
-        key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', '**/*.gradle*', '**/gradle-wrapper.properties') }}
-    - name: read cache
-      env:
-        GRADLE_PROPERTIES: ${{ secrets.GRADLE_PROPERTIES }}
-      shell: bash
-      run: |
-        mkdir -p ~/.gradle/
-        echo "GRADLE_USER_HOME=${HOME}/.gradle" >> $GITHUB_ENV
-        echo "${GRADLE_PROPERTIES}" > ~/.gradle/gradle.properties
-    - name: read juliangruber/read-file-action@v1
-      id: gradle
-      uses: juliangruber/read-file-action@v1
-      with:
-        path: ./app/build.gradle
-    - name: Echo build.gradle
-      run: |
-        echo "${{ steps.package.outputs.content }}"
-    - name: Read andstor/file-reader-action@v1
-      id: gradle2
-      uses: andstor/file-reader-action@v1
-      with:
-        path: ./app/build.gradle
-    - name: File contents
-      run: echo "${ steps.read_file.outputs.contents }"
+      run: ls -al
 
-    
         
