@@ -24,8 +24,5 @@ jobs:
     - name: cat to file
       run: |
         cat app/build.gradle >> test.json
-        cat test.json 
-        cat test.json.android
-    - name: view app build gradle 
-      run: | 
-        cat app/build.gradle.android
+        a = app/build.gradle
+        cat a
