@@ -31,6 +31,6 @@ jobs:
         cat aos
         echo "$aos_version ^^"
         echo "$greeting ^^"
-        echo "aos_version: ${{ env.aos_version }}"
+        echo "aos_version: ${{ env:aos_version }}"
         echo "aos_version2: $aos_version"
 
