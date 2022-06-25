@@ -24,10 +24,10 @@ jobs:
         cat app/build.gradle > test.json
     - name: get build version 1
       run: | 
-        cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' 
+        cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' 
     - name: get build version 2
       run: | 
-        cat test.json | grep 'versionName'|tr -d 'versionName','/"' > c.json
+        cat test.json | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' '  > c.json
     - name: get build version 3
       run: | 
         cat c.json
