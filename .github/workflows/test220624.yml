@@ -23,14 +23,15 @@ jobs:
     - name: hi
       run: echo "$greeting ^^"
     - name: get build version 1
+      env:
+        aos_version: 수정값
       run: | 
         cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > aos.json
         cat aos.json
         echo $aos_version = 'aa'
         echo $aos_version
         echo "$aos_version"
-      env:  
-        aos_version: 수정값
+      
         
 
 
