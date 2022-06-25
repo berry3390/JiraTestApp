@@ -32,5 +32,5 @@ jobs:
         cat test.json | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' '  > c.json
         cat c.json
         cat aos_version
-        echo "${{ aos_version }}"
+        echo "aos_version: $aos_version"
 
