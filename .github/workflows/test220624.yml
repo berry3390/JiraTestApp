@@ -26,7 +26,9 @@ jobs:
         cat app/build.gradle > test.json
     - name: get build version 1
       run: | 
-        cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > env.aos_version
+        cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > aos
+      env: 
+        aos_version: aos
     - name: get build version 2
       run: | 
         cat test.json | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' '  > c.json
