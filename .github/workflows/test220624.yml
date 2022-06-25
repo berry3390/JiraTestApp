@@ -23,5 +23,7 @@ jobs:
       run: cat app/build.gradle
     - name: cat to file
       run: cat app/build.gradle >> test.json
+    - name: testContent
+      run: cat test.json
 
         
