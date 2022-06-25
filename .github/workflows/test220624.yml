@@ -30,6 +30,6 @@ jobs:
     - name: get build version 2
       run: | 
         cat test.json | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' '  > c.json
-    - name: get build version 3
-      run: | 
         cat c.json
+        cat aos_version
+
