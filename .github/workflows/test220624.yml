@@ -21,7 +21,7 @@ jobs:
       run: ls -al
     - name: cat 
       run: cat app/build.gradle
-    - name: cat2
-      run: cat app/build.gradle/android
+    - name: cat to file
+      run: cat app/build.gradle >> test.json
 
         
