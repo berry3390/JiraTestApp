@@ -26,6 +26,6 @@ jobs:
     - name: testContent
       run: | 
         cat test.json 
-    - name: toJson
+    - name: hashFiles
       run: | 
-        cat toJson(cat app/build.gradle)
+        cat hashFiles(app/build.gradle)
