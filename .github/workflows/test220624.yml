@@ -22,8 +22,8 @@ jobs:
     - name: cat 
       run: | 
         cat app/build.gradle >> a
-        echo "${{ toJson(app/build.gradle) }}"
-        echo "${{ toJson(a) }}"
+        echo "${{ a }}"
     - name: toJson
       run: |
-        echo "${{ toJson(cat app/build.gradle) }}"
+        echo "${{ toJson(app/build.gradle) }}"
+        echo "${{ toJson(a) }}"
