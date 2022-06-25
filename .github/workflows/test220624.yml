@@ -15,21 +15,17 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     env:  
-      aos_version: ''
+      greeting: hello
     steps:
     - name: Check out
       uses: actions/checkout@v3
-    - name: la -al
-      run: ls -al
-    - name: cat 
-      run: | 
-        cat app/build.gradle > test.json
+    - name: hi
+      run: echo "$greeting ^^"
     - name: get build version 1
       run: | 
         cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > aos
-        echo "aos_version=aaaa" 
       env:
-        aos_version: hahaha
+        aos_version: cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' '
     - name: get build version 2
       run: | 
         cat aos
