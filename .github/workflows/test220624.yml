@@ -25,8 +25,7 @@ jobs:
     - name: get build version 1
       run: | 
         cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > aos
-      env:
-        aos_version: Why not
+        $aos_version: Why not
     - name: get build version 2
       run: | 
         cat aos
