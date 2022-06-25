@@ -24,12 +24,11 @@ jobs:
       run: echo "$greeting ^^"
     - name: get build version 1
       run: | 
-        cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > aos
+        cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > aos.json
+        cat aos.json
         cat app/build.gradle | grep 'versionName'|tr -d 'versionName','/"' | tr -d ' ' > $aos_version
-    - name: get build version 2
-      run: | 
-        cat aos
         echo ${{ aos_version }}
+        
 
 
 
