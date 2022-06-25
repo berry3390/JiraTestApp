@@ -29,7 +29,8 @@ jobs:
     - name: get build version 2
       run: | 
         cat aos
-        echo "$env.aos_version ^^"
+        echo "$aos_version ^^"
+        echo "$greeting ^^"
         echo "aos_version: ${{ env.aos_version }}"
         echo "aos_version2: $aos_version"
 
